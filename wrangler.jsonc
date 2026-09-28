@@ -1,0 +1,10 @@
+{
+  // Deploy manually from your local terminal: `wrangler deploy`
+  // Auth: wrangler login, then set secrets with:
+  //   wrangler secret put RELAY_SHARED_SECRET
+  "name": "muse-relay-worker",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-28",
+  "workers_dev": true,
+  "preview_urls": false
+}

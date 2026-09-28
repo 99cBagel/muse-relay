@@ -1,0 +1,1 @@
+{"description":"Relay agent: Cloudflare Worker bridging a browser chat UI and a processing backend over MCP.","devDependencies":{"wrangler":"^4.38.0"},"name":"muse-relay-worker","private":true,"scripts":{"deploy":"wrangler deploy","test":"node --test"},"type":"module"}
