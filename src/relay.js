@@ -7,9 +7,11 @@
 //   inbox  : frontend -> backend messages, consumed by relay_receive
 //   outbox : backend  -> frontend messages, consumed by the SSE stream
 //
-// NOTE: state lives in the isolate's memory. If the Worker is evicted or a
-// request lands on a different isolate, sessions are lost. For durable
-// sessions, back this store with a Durable Object or KV.
+// NOTE: state lives in module memory. In production every request is
+// forwarded to the single RelayCoordinator Durable Object
+// (src/relay-do.js), so this Map behaves as one global, consistent store.
+// Outside the DO (unit tests, wrangler dev without the binding) it is
+// plain per-isolate memory.
 
 const sessions = new Map();
 

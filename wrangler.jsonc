@@ -6,5 +6,12 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-09-28",
   "workers_dev": true,
-  "preview_urls": false
+  "preview_urls": false,
+  // Single Durable Object owning all relay sessions: without it, requests
+  // landing on different isolates each see a different (empty) session
+  // store, so the browser and the MCP backend can never meet.
+  "durable_objects": {
+    "bindings": [{ "name": "RELAY_DO", "class_name": "RelayCoordinator" }]
+  },
+  "migrations": [{ "tag": "v1", "new_classes": ["RelayCoordinator"] }]
 }

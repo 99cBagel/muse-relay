@@ -60,8 +60,11 @@ Endpoints:
 Backend loop: `relay_list_sessions` → `relay_claim_session` → loop
 `relay_receive` (timeout ~25s) → process → `relay_send`.
 
-> Session state is in-memory per isolate. If the Worker is evicted, sessions
-> are lost. For durable sessions, back `src/relay.js` with a Durable Object.
+> Session state lives in the `RelayCoordinator` Durable Object
+> (`src/relay-do.js`): one named instance owns all sessions, so the browser
+> and the MCP backend always see the same store no matter which isolate
+> serves a request. `wrangler deploy` applies the DO migration
+> automatically; no extra setup is needed.
 
 ## Web frontend (Vercel)
 
