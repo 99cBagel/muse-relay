@@ -74,7 +74,7 @@ npm run build
 Deploy to Vercel from this repo (root directory `web`, or import `web/` as the
 project). Set the environment variable:
 
-- `NEXT_PUBLIC_WORKER_URL` = your Worker URL, e.g.
+- `MUSE_RELAY_WORKER_URL` = your Worker URL, e.g.
   `https://muse-relay-worker.<account>.workers.dev`
 
 Preferred production endpoint: `muse-relay.vercel.app` (set as the custom

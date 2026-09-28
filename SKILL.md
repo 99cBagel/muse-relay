@@ -10,7 +10,7 @@ and the processing backend. The frontend is a chat box UI hosted at
 `muse-relay.vercel.app`; the backend is whatever MCP client claims a session
 (e.g. Muse on iPhone).
 
-Base URL: the deployed Worker URL (set `NEXT_PUBLIC_WORKER_URL` on the web
+Base URL: the deployed Worker URL (set `MUSE_RELAY_WORKER_URL` on the web
 side). All `/mcp` calls require `Authorization: Bearer <RELAY_SHARED_SECRET>`.
 MCP transport: Streamable HTTP — POST JSON-RPC 2.0 to `/mcp`.
 
